@@ -1,0 +1,9 @@
+{
+  "appId": "com.chatyou.app",
+  "appName": "ChatYou",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}

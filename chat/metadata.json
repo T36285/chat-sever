@@ -1,0 +1,6 @@
+{
+  "name": "chatyou",
+  "description": "Applicazione di messaggistica veloce e sicura con registrazione flessibile, validazione anagrafica e pulizia automatica per inattività di 30 giorni.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
