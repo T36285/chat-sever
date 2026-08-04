@@ -17,6 +17,9 @@ const PORT = process.env.PORT || 3000;
 app.use(cors({ origin: "*" }));
 app.use(express.json({ limit: "50mb" }));
 
+// Rende visibili tutti i file della cartella (incluso index.html)
+app.use(express.static(__dirname));
+
 // --- Database JSON Locale con Persistenza ---
 const DATA_DIR = path.join(__dirname, "data");
 const DB_FILE = path.join(DATA_DIR, "db.json");
@@ -92,7 +95,7 @@ app.post("/api/register", (req, res) => {
     age,
     phoneNumber: phoneNumber || null,
     alternativeId: code10,
-    password, // In produzione consiglito hash bcrypt
+    password, // In produzione consigliato hash bcrypt
     createdAt: new Date().toISOString(),
     lastLogin: new Date().toISOString(),
     consentAccepted: true
@@ -227,6 +230,6 @@ io.on("connection", (socket) => {
 // Avvio Server
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`================================================`);
-  console.log(`🚀 Server ChatYou in esecuzione sulla porta ${PORT}`);
+  console.log(`🚀 Server in esecuzione sulla porta ${PORT}`);
   console.log(`================================================`);
 });
